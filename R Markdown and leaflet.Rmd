@@ -1,0 +1,27 @@
+---
+title: "R Markdown and leaflet"
+#author: "Guy Mathys"
+#date: "13-2-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+ ```{r echo=FALSE, comment = ""}
+ my_date <- Sys.Date()
+ my_date_wd <- format(my_date,"%A")
+ my_date_m <- format(my_date,"%B")
+ my_date_d <- format(my_date,"%d")  
+ my_date_y <- format(my_date,"%Y")  
+ my_date2 = paste (my_date_wd,my_date_m,my_date_d,my_date_y,sep= " " )
+ my_date2
+
+  ```
+  ```{r echo=FALSE}
+library(leaflet)
+leaflet() %>%
+  addTiles %>% 
+  setView(lng = 3.4, lat = 51.3, zoom = 6)
+```
+
